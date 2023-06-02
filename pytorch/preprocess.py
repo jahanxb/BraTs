@@ -5,13 +5,23 @@ import numpy as np
 import nibabel as nib
 from sklearn.preprocessing import LabelBinarizer
 
-IMG_ROOT = './Task01_BrainTumor/imagesTr'
-IMG_PATH = './Task01_BrainTumor/imagesTr/BRATS_148.nii.gz'
-IMG_OUTPUT_ROOT = './train/image_T1'
+# IMG_ROOT = './Task01_BrainTumor/imagesTr'
+# IMG_PATH = './Task01_BrainTumor/imagesTr/BRATS_148.nii.gz'
+# IMG_OUTPUT_ROOT = './train/image_T1'
 
-LABEL_ROOT = './Task01_BrainTumor/labelsTr'
-IABEL_PATH = './Task01_BrainTumor/labelsTr/BRATS_148.nii.gz'
-LABEL_OUTPUT_ROOT = './train/label'
+# LABEL_ROOT = './Task01_BrainTumor/labelsTr'
+# IABEL_PATH = './Task01_BrainTumor/labelsTr/BRATS_148.nii.gz'
+# LABEL_OUTPUT_ROOT = './train/label'
+
+IMG_ROOT = '/mydata/BrainTumor/imagesTr'
+IMG_PATH = '/mydata/BrainTumor/imagesTr/BRATS_148.nii.gz'
+IMG_OUTPUT_ROOT = '/mydata/BrainTumor/train/image_T1'
+
+LABEL_ROOT = '/mydata/BrainTumor/labelsTr'
+IABEL_PATH = './mydata/BrainTumor/labelsTr/BRATS_148.nii.gz'
+LABEL_OUTPUT_ROOT = '/mydata/BrainTumor/train/label'
+
+
 
 L0 = 0      # Background
 L1 = 50     # Necrotic and Non-enhancing Tumor

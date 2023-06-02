@@ -18,7 +18,8 @@ except ImportError:
     accimage = None
 
 from torch.utils.data import DataLoader, Dataset
-from PIL import Image, PILLOW_VERSION
+from PIL import Image
+from PIL import __version__ as PILLOW_VERSION
 from scipy.ndimage.filters import gaussian_filter
 from scipy.ndimage.interpolation import map_coordinates
 
@@ -692,11 +693,15 @@ def affine(img, label, angle, translate, scale, shear, resample=0, fillcolor=Non
         "Argument translate should be a list or tuple of length 2"
 
     assert scale > 0.0, "Argument scale should be positive"
-
+    
+    print(f'PILLOW_VERSION: {PILLOW_VERSION}')
     output_size = img.size
     center = (img.size[0] * 0.5 + 0.5, img.size[1] * 0.5 + 0.5)
     matrix = _get_inverse_affine_matrix(center, angle, translate, scale, shear)
+    
     kwargs = {"fillcolor": fillcolor} if PILLOW_VERSION[0] == '5' else {}
+    #kwargs = {"fillcolor": fillcolor}
+    
     return img.transform(output_size, Image.AFFINE, matrix, resample, **kwargs),\
             label.transform(output_size, Image.AFFINE, matrix, resample, **kwargs)
 

@@ -109,13 +109,13 @@ if __name__ == "__main__":
                         help="Learning rate to use in training")
     parser.add_argument("--data", type=str, default="complete",
                         help="Label data type.")
-    parser.add_argument("--img_root", type=str, default="../../data/train/image_FLAIR",
+    parser.add_argument("--img_root", type=str, default="/mydata/BrainTumor/train/image_FLAIR",
                         help="The directory containing the training image dataset.")
-    parser.add_argument("--label_root", type=str, default="../../data/train/label",
+    parser.add_argument("--label_root", type=str, default="/mydata/BrainTumor/train/label",
                         help="The directory containing the training label datgaset")
-    parser.add_argument("--output_root", type=str, default="./output/prediction",
+    parser.add_argument("--output_root", type=str, default="/mydata/BrainTumor/output/prediction",
                         help="The directory containing the result predictions")
-    parser.add_argument("--ckpt_root", type=str, default="./checkpoint",
+    parser.add_argument("--ckpt_root", type=str, default="/mydata/BrainTumor/checkpoint",
                         help="The directory containing the checkpoint files")
     args = parser.parse_args()
 
